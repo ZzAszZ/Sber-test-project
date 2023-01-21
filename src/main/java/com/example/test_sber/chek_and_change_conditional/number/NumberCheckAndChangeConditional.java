@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class NumberCheckAndChangeConditionalFirstFree implements CheckAndChangeAndChangeConditional {
+public class NumberCheckAndChangeConditional implements CheckAndChangeAndChangeConditional {
 
     private static final List<NumberRule> advancedRules = new ArrayList<>();
 
@@ -37,7 +37,6 @@ public class NumberCheckAndChangeConditionalFirstFree implements CheckAndChangeA
         if (tailReplacement.equals("3") || tailReplacement.equals("4")){
             String updateNumber = accountDto.getNumber().substring(0,9) + tailReplacement + accountDto.getNumber().substring(10,20);
             accountDto.setNumber(updateNumber);
-
         }else {
             int length = 20 - tailReplacement.length();
             String updatedNumber = accountDto.getNumber().substring(0, length) + tailReplacement;
